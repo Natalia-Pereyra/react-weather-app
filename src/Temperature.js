@@ -12,7 +12,7 @@ export default function Temperature() {
         <div className="d-flex temperature"> 
             <strong id="temperature">14</strong>
             <span className="units">
-            <p className="Celsius">°C</p><p className="Farenheit">⎢F</p>
+            <p id="celsius-link">°C</p><p id="fahrenheit-link">⎢F</p>
             </span>
         </div>
         </div>

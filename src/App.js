@@ -1,22 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-import Weather from "./Weather";
 import Conditions from "./Conditions";
 import Description from "./Description";
-import Header from "./Header";
-import Form from "./Form";
+import SearchEngine from "./SearchEngine";
 import Temperature from "./Temperature";
+import Forecast from './Forecast';
+import Header from "./Header";
 
 function App() {
   return (
     <div className="App">
-    <Header /> 
-    <Form />
-     <div className="row-6">
+      <Header />
+    <SearchEngine />
+     <div className="row">
       <Temperature />
       <Conditions />
     </div>   
       <Description />
+      <Forecast />
      </div>
   );
 }
