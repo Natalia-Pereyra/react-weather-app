@@ -19,7 +19,7 @@ let [weather, setWeather] = useState("");
 
   setWeather(
    <div className="header">
-      <Header />
+     
     </div>
   )
  }
@@ -47,10 +47,13 @@ return (
   <div>
   {weather}
   </div>
-<form className="form" onSubmit= {handleSubmit} >
-  <input type= "Search" onChange= {updateCity} />
-  <input type= "Submit" value= "Search" className="search-button" />
-</form>
+  <div id="form">
+<form id="search-form">
+                <input type="text" placeholder="Search for a city" autocomplete="off" autofocus="on"
+                    id="search-text-input" />
+                <input id="search-button" type="submit" value="Search" />
+            </form>
+            </div>
 </div>
 );
 }
