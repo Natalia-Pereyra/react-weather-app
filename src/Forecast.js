@@ -10,7 +10,8 @@ export default function Forecast(){
                 <h6>09:00</h6>
               <img 
                   className="w-100"
-                 src="http://openweathermap.org/img/wn/10d@2x.png"/>
+                 src="http://openweathermap.org/img/wn/10d@2x.png"
+                 alt=""/>
                 <div class="weather-forecast-temperature">
                 <strong>10°C </strong>7°C
             </div>
