@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Conditions from "./Conditions";
 import Description from "./Description";

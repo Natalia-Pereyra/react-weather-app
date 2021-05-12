@@ -47,6 +47,7 @@ li::first-letter {
   max-width: 500px;
   margin-top: 10px;
   margin-top: 50px;
+  background-image: url("./Images/weatherappbackground.png");
 }
 
 .row {
