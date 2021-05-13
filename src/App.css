@@ -167,5 +167,6 @@ li::first-letter {
   text-decoration: none;
 }
 .footer {
-  margin-left: 400px;
+  max-width: 500px;
+  margin: 10px auto 0;
 }
