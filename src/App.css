@@ -75,16 +75,6 @@ li::first-letter {
   font-weight: normal;
   padding: 0px;
 }
-#my-name {
-  color: #ec6e4c;
-  opacity: 0.7;
-  font-style: italic;
-  margin: 0 auto;
-}
-#my-link {
-  color: #5a6276;
-  font-style: bold;
-}
 
 #description-weather {
   color: #ec6e4c;
@@ -159,4 +149,23 @@ li::first-letter {
 #form {
   display: block;
   text-align: center;
+}
+#my-name {
+  color: #ec6e4c;
+  opacity: 0.7;
+  font-style: italic;
+  margin: 0 auto;
+}
+#my-link {
+  color: #5a6276;
+  font-weight: 700;
+  text-decoration: none;
+}
+#my-link:hover {
+  color: #ec6e4c;
+  font-weight: 700;
+  text-decoration: none;
+}
+.footer {
+  margin-left: 150px;
 }
