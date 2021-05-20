@@ -5,9 +5,8 @@ import FormattedDate from "./FormattedDate";
 
 export default function SearchEngine(props) {
   
-  const [ready, setReady] = useState({ ready: false});
   const [temperature, setTemperature] = useState(null);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false});
   const [city, setCity] = useState("");
 
   function handleCityChange(event) {
@@ -37,20 +36,20 @@ export default function SearchEngine(props) {
    description: response.data.weather[0].description,
    city: response.data.name,
    date: new Date(response.data.dt *1000),
-  })
+  });
      setTemperature(Math.round(response.data.main.temp));
-     setReady(true);
+    
    
   }
 
-  if(ready) {
+  if(weatherData.ready) {
     return (
    
    <div id="form"> 
    <h1>
       
         </h1> 
-   <FormattedDate date={weatherData.date} defaultCity="Buenos Aires"/>
+   <FormattedDate date={weatherData.date} />
    
 <form id="search-form" onSubmit={handleSubmit} >
                 <input type="text" 
@@ -66,12 +65,7 @@ export default function SearchEngine(props) {
   } 
   else {
   search();
-  return "Loading..."
+  return "Loading...";
 
   }
-
- 
-
-
-
 }
