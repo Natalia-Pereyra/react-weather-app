@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Date from "./Date";
+import FormattedDate from "./FormattedDate";
 
 
 export default function SearchEngine(props) {
@@ -22,7 +22,7 @@ export default function SearchEngine(props) {
 
   function search() {
   const apiKey = "396c00224132d4189b94cab19ab901e7";
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(handleResponse);
  
    }
@@ -50,7 +50,7 @@ export default function SearchEngine(props) {
    <h1>
       
         </h1> 
-   <Date date={weatherData.date} defaultCity="Buenos Aires"/>
+   <FormattedDate date={weatherData.date} defaultCity="Buenos Aires"/>
    
 <form id="search-form" onSubmit={handleSubmit} >
                 <input type="text" 
