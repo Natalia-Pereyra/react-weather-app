@@ -1,23 +1,45 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
+import Conditions from "./Conditions";
+import Description from "./Description";
+import Forecast from './Forecast';
+
+
+
 
 
 export default function SearchEngine(props) {
   
-  const [temperature, setTemperature] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false});
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(props.defaultCity);
 
-  function handleCityChange(event) {
-    setCity(event.target.value)
-  }
-  
-   function handleSubmit(event){
+  function handleResponse(response){
+   setWeatherData({
+   ready: true,
+   temperature: Math.round(response.data.main.temp),
+   wind: Math.round(response.data.wind.speed),
+   coordinates: response.data.coord,
+   humidity: response.data.main.humidity,
+   description: response.data.weather[0].description,
+   city: response.data.name,
+   date: new Date(response.data.dt *1000),
+   visibility: response.data.visibility / 1000,
+   iconURL: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  });
+    }
+   
+    function handleSubmit(event){
      event.preventDefault();
      search();
    }
 
+    function handleCityChange(event) {
+    setCity(event.target.value)
+  }
+  
+  
 
   function search() {
   const apiKey = "396c00224132d4189b94cab19ab901e7";
@@ -26,28 +48,12 @@ export default function SearchEngine(props) {
  
    }
   
-  function handleResponse(response){
-   setWeatherData({
-   ready: true,
-   temperature: response.data.main.temp,
-   wind: response.data.wind.speed,
-   coordinates: response.data.coord,
-   humidity: response.data.main.humidity,
-   description: response.data.weather[0].description,
-   city: response.data.name,
-   date: new Date(response.data.dt *1000),
-  });
-     setTemperature(Math.round(response.data.main.temp));
-    
-   
-  }
-
   if(weatherData.ready) {
     return (
    
    <div id="form"> 
    <h1>
-      
+      {city}
         </h1> 
    <FormattedDate date={weatherData.date} />
    
@@ -60,7 +66,15 @@ export default function SearchEngine(props) {
                 onChange = {handleCityChange} />
                 <input id="search-button" type="submit" value="Search" />
             </form>
-            </div>
+             <div className="row">
+      <Temperature data={weatherData} />
+      <Conditions data={weatherData} />
+    </div>   
+      <Description data = {weatherData}/>
+      <Forecast />
+     </div>
+           
+            
 );
   } 
   else {

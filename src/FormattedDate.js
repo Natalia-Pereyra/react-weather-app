@@ -4,6 +4,7 @@ import React from "react";
 export default function FormattedDate(props){
 
 let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
@@ -23,7 +24,7 @@ if (hours <10) {
 }
 
 return (
-    <div>
+    <div id="currentdate">
         Today is {day}, {hours}:{minutes}
     </div>)
 }

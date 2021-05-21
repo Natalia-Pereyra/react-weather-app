@@ -1,16 +1,16 @@
 import React from "react";
 
-export default function Temperature() {
+export default function Temperature(props) {
   return (
    
     <div className="col-6">
         <div className="d-flex align-items-center">
-        <img src="http://openweathermap.org/img/wn/10d@2x.png"
+        <img src={props.data.iconURL}
         id="icon"
         alt=""
         className="float-left"/>
         <div className="d-flex temperature"> 
-            <strong id="temperature">14</strong>
+            <strong id="temperature">{props.data.temperature}</strong>
             <span className="units">
             <p id="celsius-link">°C</p><p id="fahrenheit-link">⎢F</p>
             </span>

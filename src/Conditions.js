@@ -1,16 +1,17 @@
 import React from "react";
+import './App.css';
 
-export default function Conditions() {
+export default function Conditions(props) {
 return(
 
   <div class="col-6" id="weather-description">
   <ul>
       <li>
-          Humidity: <span id="humidity">60</span>%</li>
+          Humidity: <span id="humidity">{props.data.humidity}</span>%</li>
       <li>
-          Wind: <span id="wind-speed">25</span>Km/h</li>
+          Wind: <span id="wind-speed">{props.data.wind}</span> Km/h</li>
           <li>
-          Precipitation: <span id="wind-speed">25</span>mm</li>
+          visibility: <span id="wind-speed">{props.data.visibility}</span>%</li>
   </ul>
 </div>
 
