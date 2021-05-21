@@ -5,10 +5,7 @@ export default function Temperature(props) {
    
     <div className="col-6">
         <div className="d-flex align-items-center">
-        <img src={props.data.iconURL}
-        id="icon"
-        alt=""
-        className="float-left"/>
+       
         <div className="d-flex temperature"> 
             <strong id="temperature">{props.data.temperature}</strong>
             <span className="units">
