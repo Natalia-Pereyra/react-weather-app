@@ -5,6 +5,7 @@ import Temperature from "./Temperature";
 import Conditions from "./Conditions";
 import Description from "./Description";
 import Forecast from './Forecast';
+import WeatherIcon from "./WeatherIcon"
 
 
 
@@ -26,8 +27,8 @@ export default function SearchEngine(props) {
    city: response.data.name,
    date: new Date(response.data.dt *1000),
    visibility: response.data.visibility / 1000,
-   iconURL: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  });
+   icon: response.data.weather[0].icon,
+  })
     }
    
     function handleSubmit(event){
@@ -67,6 +68,9 @@ export default function SearchEngine(props) {
                 <input id="search-button" type="submit" value="Search" />
             </form>
              <div className="row">
+               <div className="float-left">
+      <WeatherIcon code={props.data.icon} />        
+      </div>
       <Temperature data={weatherData} />
       <Conditions data={weatherData} />
     </div>   
