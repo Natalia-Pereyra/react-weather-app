@@ -1,81 +1,23 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
 
 
 export default function Forecast(){
 
 
     return(
-        <div className="row" id="all-forecast">
-            <div class="col-2 text-center">
-                <h6>09:00</h6>
-              <img 
-                  className="w-100"
-                 src="http://openweathermap.org/img/wn/10d@2x.png"
-                 alt=""/>
-                <div class="weather-forecast-temperature">
-                <strong>10°C </strong>7°C
-            </div>
-            </div>
-             <div class="col-2 text-center">
-                <h6>09:00</h6>
-                <img
-                className="w-100" src="http://openweathermap.org/img/wn/01d@2x.png" 
-                
-                alt=""
-                id="forecast-icon"/>
-                <div class="weather-forecast-temperature">
-                <strong>10°C </strong>7°C
-            </div>
-            </div>
-             <div class="col-2 text-center">
-                <h6>09:00</h6>
-                <img 
-                className="w-100"
-                src="http://openweathermap.org/img/wn/04d@2x.png" 
-                
-                alt=""
-                id="forecast-icon"/>
-                <div class="weather-forecast-temperature">
-                <strong>10°C </strong>7°C
-            </div>
-            </div>
-             <div class="col-2 text-center">
-                <h6>09:00</h6>
-                <img 
-                className="w-100"
-                src="http://openweathermap.org/img/wn/03d@2x.png" 
-                
-                alt=""
-                id="forecast-icon"/>
-                <div class="weather-forecast-temperature">
-                <strong>10°C </strong>7°C
-            </div>
-            </div>
-             <div class="col-2 text-center">
-                <h6>09:00</h6>
-                <img 
-                className="w-100"
-                src="http://openweathermap.org/img/wn/11d@2x.png" 
-                
-                alt=""
-                id="forecast-icon"/>
-                <div class="weather-forecast-temperature">
-                <strong>10°C </strong>7°C
-            </div>
-            </div>
-             <div class="col-2 text-center">
-                <h6>09:00</h6>
-                <img 
-                className="w-100"
-                src="http://openweathermap.org/img/wn/01d@2x.png" 
-                
-                alt=""
-                id="forecast-icon"/>
-                <div class="weather-forecast-temperature">
-                <strong>10°C </strong>7°C
-            </div>
-            </div>
-            
-        </div>
-    )
-}
+       <div className="Forecast" id="all-forecast">
+       <div className="row">
+       <div className="col">
+       <div classNAme="Forecast-day">Thu</div>
+       <WeatherIcon code="01d" size={35}/>
+       <div className="Forecast-temperatures">
+           <span className="Forecast-temperature-max">12°</span>
+            <span className="Forecast-temperature-min">06°</span>
+
+       </div>
+       </div>    
+       </div>
+       </div>        
+          );
+          }

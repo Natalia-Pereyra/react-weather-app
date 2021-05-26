@@ -69,7 +69,7 @@ export default function SearchEngine(props) {
             </form>
              <div className="row">
                <div className="float-left">
-      <WeatherIcon code={weatherData.icon} />        
+      <WeatherIcon code={weatherData.icon} size={60} />        
       </div>
       <Temperature data={weatherData} celsius={weatherData.temperature}/>
       <Conditions data={weatherData} />

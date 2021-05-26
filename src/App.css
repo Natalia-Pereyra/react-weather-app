@@ -117,7 +117,7 @@ h1 {
 .weather-forecast-temperature {
   color: #515151;
   opacity: 0.7;
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 14px;
 }
 #all-forecast {
@@ -130,14 +130,7 @@ h1 {
 #celsius-link {
   margin-left: -20px;
 }
-#icon {
-  display: block;
-  text-align: left;
-  margin-left: 0px;
-  padding: 0px;
-  position: relative;
-  top: 50px;
-}
+
 #city {
   margin-bottom: 0px;
 }
