@@ -32,6 +32,7 @@ const codeMapping = {
     color="#ec6e4c"
     size={props.size}
     animate={true}
+    
   />
   </div>
     )

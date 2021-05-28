@@ -18,6 +18,7 @@ export default function SearchEngine(props) {
 
   function handleResponse(response){
    setWeatherData({
+   coordinates: response.data.coord,
    ready: true,
    temperature: Math.round(response.data.main.temp),
    wind: Math.round(response.data.wind.speed),
@@ -69,13 +70,13 @@ export default function SearchEngine(props) {
             </form>
              <div className="row">
                <div className="float-left">
-      <WeatherIcon code={weatherData.icon} size={60} />        
+      <WeatherIcon code={weatherData.icon} size={65} />        
       </div>
       <Temperature data={weatherData} celsius={weatherData.temperature}/>
       <Conditions data={weatherData} />
     </div>   
       <Description data = {weatherData}/>
-      <Forecast />
+      <Forecast coordinates={weatherData.coordinates} />
      </div>
            
             
