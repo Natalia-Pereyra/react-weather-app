@@ -8,13 +8,11 @@ import Forecast from './Forecast';
 import WeatherIcon from "./WeatherIcon"
 
 
-
-
-
 export default function SearchEngine(props) {
   
   const [weatherData, setWeatherData] = useState({ ready: false});
   const [city, setCity] = useState(props.defaultCity);
+
 
   function handleResponse(response){
    setWeatherData({
@@ -47,8 +45,7 @@ export default function SearchEngine(props) {
   const apiKey = "396c00224132d4189b94cab19ab901e7";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(handleResponse);
- 
-   }
+ }
   
   if(weatherData.ready) {
     return (
@@ -70,7 +67,7 @@ export default function SearchEngine(props) {
             </form>
              <div className="row">
                <div className="float-left">
-      <WeatherIcon code={weatherData.icon} size={65} />        
+      <WeatherIcon code={weatherData.icon} size={55} />        
       </div>
       <Temperature data={weatherData} celsius={weatherData.temperature}/>
       <Conditions data={weatherData} />
