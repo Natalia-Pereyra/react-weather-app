@@ -20,7 +20,6 @@ export default function SearchEngine(props) {
    ready: true,
    temperature: Math.round(response.data.main.temp),
    wind: Math.round(response.data.wind.speed),
-   coordinates: response.data.coord,
    humidity: response.data.main.humidity,
    description: response.data.weather[0].description,
    city: response.data.name,
